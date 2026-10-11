@@ -58,7 +58,8 @@ def response_generator():
         "Please provide the response only with no before or after commentary.",
         data=st.session_state.messages,
         api_key=st.secrets["apikey"],
-        model = "mistral-small-2603"
+        api_url="https://api.openai.com/v1/chat/completions",
+        model="gpt-4o-mini"
     )
     for word in response.split():
         yield word + " "
